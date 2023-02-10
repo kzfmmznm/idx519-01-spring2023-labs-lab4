@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Used Emmet template -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Form</title>
+</head>
+
+<body>
+    <h1>Volunteer Form</h1>
+
+    <!-- Referred MDN definition: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form -->
+    <form action="http://bloomingdale.sat.iit.edu/kriedan/lab3formscript.php" method="post">
+        <fieldset>
+            <legend>My Info</legend>
+            <div>
+                <label for="first-name-field">First Name: <input type="text" id="first-name-field" name="first_name_field"></label>
+            </div>
+            <div>
+                <label for="last-name-field">Last Name: <input type="text" id="last-name-field" name="last_name_field"></label>
+            </div>
+            <div>
+                <label for="phone-field">Phone Number: <input type="text" id="phone-field" name="phone_field"></label>
+            </div>
+            <div>
+                <label for="email-field">Email Adrdress: <input type="text" id="email-field" name="email_field"></label>
+            </div>
+            <!-- I used radio button here because user should pick one while the number of options are small -->
+            <!-- I checked PHP code and found that it displays the value in the valud field directly.
+            Though I had thought if I should set the value like "Male", I set value lowercase and code-friendly value instead, expecting server-side PHP code handles them well. -->
+            <div>Gender:
+                <label for="gender-field-male"><input type="radio" id="gender-field-male" name="gender_field" value="male">Male</label>
+                <label for="gender-field-female"><input type="radio" id="gender-field-female" name="gender_field" value="female">Female</label>
+            </div>
+            <div>
+                <!-- I used drop down list here because user should pick one while the number of options are relatively large -->
+                <!-- I checked PHP code and found that it displays the value in the valud field directly.
+                Though I had thought if I should set the value like "under 18", I set value lowercase and code-friendly value instead, expecting server-side PHP code handles them well. -->
+                <label for="age-field">Age:
+                    <select id="age-field" name="age_field">
+                        <option value="age_category_1">under 18</option>
+                        <option value="age_category_2">18 - 24</option>
+                        <option value="age_category_3">25 - 34</option>
+                        <option value="age_category_4">35 - 44</option>
+                        <option value="age_category_5">45 - 54</option>
+                        <option value="age_category_6">55 - 64</option>
+                        <option value="age_category_7">65 and over</option>
+                    </select>
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>My Availability</legend>
+            <div>
+                Days Available:
+                <!-- I used checkbox here because user should pick multiples while the number of options are limited -->
+                <!-- Surrounded by div because checkbox input is inline element -->
+                <!-- I checked PHP code and found that it displays the value in the valud field directly.
+                Though I had thought if I should set the value like "Sunday", I set value lowercase and code-friendly value instead, expecting server-side PHP code handles them well. -->
+                <div><label for="sunday"><input type="checkbox" id="sunday" name="available_field[]" value="sunday">Sunday</label></div>
+                <div><label for="monday"><input type="checkbox" id="monday" name="available_field[]" value="monday">Monday</label></div>
+                <div><label for="tuesday"><input type="checkbox" id="tuesday" name="available_field[]" value="tuesday">Tuesday</label></div>
+                <div><label for="wednesday"><input type="checkbox" id="wednesday" name="available_field[]" value=" wednesday">Wednesday</label></div>
+                <div><label for="thursday"><input type="checkbox" id="thursday" name="available_field[]" value="thursday">Thursday</label></div>
+                <div><label for="friday"><input type="checkbox" id="friday" name="available_field[]" value="friday">Friday</label></div>
+                <div><label for="saturday"><input type="checkbox" id="saturday" name="available_field[]" value="saturday">Saturday</label></div>
+            </div>
+            <div>
+                <label for="comments-field">Any Comments?</label>
+                <div>
+                    <textarea id="comments-field" name="comments_field"></textarea>
+                </div>
+            </div>
+        </fieldset>
+
+        <input type="hidden" name="hidden_field" value="kmizunuma">
+        <input type="submit" value="Send Me">
+    </form>
+</body>
+
+</html>
